@@ -21,8 +21,8 @@ import androidx.compose.ui.unit.sp
 import com.mraoj.jroek.R
 
 class Gane : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreate(sisia: Bundle?) {
+        super.onCreate(sisia)
         window.addFlags(1024)
         setContent {
 
@@ -37,9 +37,9 @@ class Gane : ComponentActivity() {
                 Text(text = "Major Joker", fontSize = 25.sp)
 
                 Button(onClick = {
-                        val byrik = Intent(this@Gane, GGTQ::class.java)
-                        startActivity(byrik)
-                    }
+                    val byrik = Intent(this@Gane, GGTQ::class.java)
+                    startActivity(byrik)
+                }
                 ) {
                     Text(
                         text = "Start Game", modifier = Modifier.fillMaxWidth(0.3f)

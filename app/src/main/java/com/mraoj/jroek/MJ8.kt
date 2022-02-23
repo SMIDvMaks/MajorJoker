@@ -17,7 +17,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.*
 import androidx.compose.ui.viewinterop.AndroidView
 import com.mraoj.jroek.DADA.DART
-import com.mraoj.jroek.DADA.FBid
+import com.mraoj.jroek.DADA.loyba
 import com.mraoj.jroek.DICTOR.*
 import com.mraoj.jroek.Gagan.Gane
 import com.onesignal.OneSignal
@@ -25,129 +25,139 @@ import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import android.content.SharedPreferences
-import android.view.Surface
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.ProgressIndicatorDefaults
 import androidx.compose.material.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.PaintingStyle.Companion.Stroke
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
-
 var h = Heinkal()
+@OptIn(DelicateCoroutinesApi::class)
 var f = FID()
+var librpne: String? = null
+var Kololoeq: ValueCallback<Array<Uri>>? = null
+var Chererhe: SharedPreferences? = null
+
 
 @DelicateCoroutinesApi
 class MJ8 : ComponentActivity() {
+    var pap = PARY(this)
     var adt = ADIE()
     var Bic = Bicep()
     var d = DART()
-    var ViewCl = WebViewClient()
+    var pepo = WebViewClient()
+    var Chrooomik = WebChromeClient()
     var ones = "MjlmMjhkOTEtNTI5ZC00YzA2LWI1NmEtZTk4NWUwNjEyYTk3"
-    private var Cald: ValueCallback<Array<Uri>>? = null
-    var linkii: String? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        window.addFlags(1024)
+    var pep = "Z2FwcHM9NDA0"
+    override fun onCreate(sapinaq: Bundle?) {
+        super.onCreate(sapinaq)
+        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE)
+        OneSignal.initWithContext(this)
+        OneSignal.setAppId(Dep.Muoq(ones))
         setContent {
+            Image(
+                modifier = Modifier.fillMaxSize(),
+                painter = painterResource(R.mipmap.bg),
+                contentDescription = Dep.Muoq("YmFja2dyb3VuZF9pbWFnZQ=="),
+                contentScale = ContentScale.FillBounds
+            )
             Box(
                 contentAlignment = Alignment.Center,
                 modifier = Modifier.fillMaxSize()
             ) {
-                Cici(percent = 0.8f, number = 100)
+                Cici(pertse = 0.8f, nyny = 100)
             }
         }
         adt.stretch(this)
         Bic.LENGST(this)
-        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE)
-        OneSignal.initWithContext(this)
-        OneSignal.setAppId(Dep.Muoq(ones))
-        var sPrefs = getSharedPreferences("com.mraoj.jroek", Context.MODE_PRIVATE);
-        linkii = sPrefs.getString("Biki", null);
-
-        ViewCl = object : WebViewClient() {
-            override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
-                super.onPageStarted(view, url, favicon)
-
+        Chererhe = getSharedPreferences(Dep.Muoq("Y29tLm1yYW9qLmpyb2Vr"), Context.MODE_PRIVATE)
+        librpne = Chererhe?.getString("Loperesupere", null)
+        pepo = object : WebViewClient() {
+            override fun onPageStarted(innntf: WebView?, lalql: String?, zzaq: Bitmap?) {
+                super.onPageStarted(innntf, lalql, zzaq)
+                if (lalql?.contains(Dep.Muoq(pep)) == true) {
+                    val oqos = Intent(this@MJ8, Gane::class.java)
+                    startActivity(oqos)
+                    finish()
+                }
             }
 
             @SuppressLint("CommitPrefEdits")
-            override fun onPageFinished(view: WebView?, url: String?) {
-                super.onPageFinished(view, url)
-                val editor: SharedPreferences.Editor = sPrefs.edit()
-                editor.putString("Biki", url).apply()
+            override fun onPageFinished(pipa: WebView?, zipas: String?) {
+                super.onPageFinished(pipa, zipas)
+                val editor: SharedPreferences.Editor? = Chererhe?.edit()
+                editor?.putString("Loperesupere", zipas)?.apply()
             }
         }
-
-
-
-        if (h.Hene(this) == 0) {
-            if (linkii != null) {
-                setContent {
-                    Venegred(url = linkii.toString(), OhBack = { wedmid ->
-                        if (wedmid?.canGoBack() == true) {
-                            wedmid.goBack()
-                        }
-                    })
-                }
-            } else {
-                GlobalScope.launch {
-                    d.GG()
-                    f.fidce(FBid!!, this@MJ8)
-                }
-                Handler(Looper.getMainLooper()).postDelayed({
-                    setContent {
-                        pap.startTest(this@MJ8)
-                    }
-                }, 5000)
-
-
-            }
-        } else {
-            val intent = Intent(this, Gane::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-    }
-
-    @SuppressLint("SetJavaScriptEnabled")
-    @Composable
-    fun Venegred(url: String, OhBack: (webView: WebView?) -> Unit) {
-        val Chromik = object : WebChromeClient() {
+        Chrooomik = object : WebChromeClient() {
             override fun onShowFileChooser(
-                webView: WebView?,
-                filePathCallback: ValueCallback<Array<Uri>>?,
-                fileChooserParams: FileChooserParams?
+                uuewq: WebView?,
+                fifife: ValueCallback<Array<Uri>>?,
+                gegegreq: FileChooserParams?
             ): Boolean {
-                if (Cald != null) {
-                    Cald!!.onReceiveValue(null)
-                    Cald = null
+                if (Kololoeq != null) {
+                    Kololoeq!!.onReceiveValue(null)
+                    Kololoeq = null
                 }
-                Cald = filePathCallback!!
+                Kololoeq = fifife
                 try {
-                    startActivityForResult(fileChooserParams!!.createIntent(), 100)
-                } catch (e: ActivityNotFoundException) {
-                    Cald = null
+                    val nnenq = Intent(Intent.ACTION_GET_CONTENT)
+                    nnenq.addCategory(Intent.CATEGORY_OPENABLE)
+                    nnenq.type = "*/*"
+                    startActivityForResult(Intent.createChooser(nnenq, "Tinreed"), 100)
+                } catch (epopo: ActivityNotFoundException) {
+                    Kololoeq = null
                     return false
                 }
                 return true
             }
         }
 
+        if (h.Hene(this) == 0) {
+            if (librpne != null) {
+                setContent {
+                    Venegred(entiki = librpne.toString(), feefi = { wedmid ->
+                        if (wedmid?.canGoBack() == true) {
+                            wedmid.goBack()
+                        }
+                    }, pepo, Chrooomik)
+                }
+            } else {
+                GlobalScope.launch {
+                    d.GG()
+                    f.fidce(loyba!!, this@MJ8)
+                }
+                Handler(Looper.getMainLooper()).postDelayed({
+                    setContent {
+                        pap.Handere(this)
+                    }
+                }, 5500)
+            }
+        } else {
+            val intent = Intent(this, Gane::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    @Composable
+    fun Venegred(
+        entiki: String, feefi: (depchek: WebView?) -> Unit,
+        wegVV: WebViewClient, weikCH: WebChromeClient
+    ) {
 
         var wid: WebView? = null
         AndroidView(factory = { gtx ->
@@ -156,8 +166,8 @@ class MJ8 : ComponentActivity() {
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT
                 )
-                this.webViewClient = ViewCl
-                this.webChromeClient = Chromik
+                this.webViewClient = wegVV
+                this.webChromeClient = weikCH
                 settings.apply {
                     setAppCacheEnabled(true)
                     allowFileAccessFromFileURLs = true
@@ -178,60 +188,40 @@ class MJ8 : ComponentActivity() {
                     javaScriptEnabled = true
                 }
                 wid = this
-                loadUrl(url)
+                loadUrl(entiki)
             }
         }, update = {
             wid = it
         })
 
         BackHandler {
-            OhBack(wid)
+            feefi(wid)
         }
     }
 
-//    @Composable
-//    fun CircularProgressBarDemo() {
-//        var progress by remember { mutableStateOf(0.1f) }
-//        val animatedProgress = animateFloatAsState(
-//            targetValue = progress,
-//            animationSpec = ProgressIndicatorDefaults.ProgressAnimationSpec
-//        ).value
-//        Column(
-//            modifier = Modifier.fillMaxSize(),
-//            verticalArrangement = Arrangement.Center,
-//            horizontalAlignment = Alignment.CenterHorizontally
-//        ) {
-//            CircularProgressIndicator(
-//                progress = animatedProgress,
-//                color = Color.Magenta,
-//                strokeWidth = 12.dp,
-//            )
-//        }
-//    }
-
     @Composable
     fun Cici(
-        percent: Float,
-        number: Int,
+        pertse: Float,
+        nyny: Int,
         fontikSize: TextUnit = 28.sp,
         radik: Dp = 50.dp,
-        color: Color = Color.DarkGray,
-        strokeWidth: Dp = 8.dp,
+        polor: Color = Color.DarkGray,
+        starer: Dp = 8.dp,
         anikDurik: Int = 1000,
         anikDelik: Int = 0
     ) {
-        var anikPlayer by remember {
+        var ancokise by remember {
             mutableStateOf(false)
         }
-        val currPerc = animateFloatAsState(
-            targetValue = if (anikPlayer) percent else 0f,
+        val cupecece = animateFloatAsState(
+            targetValue = if (ancokise) pertse else 0f,
             animationSpec = tween(
                 durationMillis = anikDurik,
                 delayMillis = anikDelik
             )
         )
         LaunchedEffect(key1 = true) {
-            anikPlayer = true
+            ancokise = true
         }
         Box(
             contentAlignment = Alignment.Center,
@@ -239,32 +229,35 @@ class MJ8 : ComponentActivity() {
         ) {
             Canvas(modifier = Modifier.size(radik * 2f)) {
                 drawArc(
-                    color = color,
+                    color = polor,
                     -90f,
-                    360 * currPerc.value,
+                    360 * cupecece.value,
                     useCenter = false,
-                    style = Stroke(strokeWidth.toPx(), cap = StrokeCap.Round)
+                    style = Stroke(starer.toPx(), cap = StrokeCap.Round)
                 )
             }
-            Text(text = (currPerc.value * number).toInt().toString(),
-            color = Color.Black,
-            fontSize = fontikSize,
-            fontWeight = FontWeight.Bold
+            Text(
+                text = (cupecece.value * nyny).toInt().toString(),
+                color = Color.Black,
+                fontSize = fontikSize,
+                fontWeight = FontWeight.Bold
             )
 
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (Cald == null) return
-        Cald!!.onReceiveValue(
-            WebChromeClient.FileChooserParams.parseResult(
-                resultCode,
-                data
+    override fun onActivityResult(inetre: Int, iresw: Int, datersa: Intent?) {
+        super.onActivityResult(inetre, iresw, datersa)
+        if (inetre == 100) {
+            if (Kololoeq == null) return
+            Kololoeq!!.onReceiveValue(
+                WebChromeClient.FileChooserParams.parseResult(
+                    iresw,
+                    datersa
+                )
             )
-        )
-        Cald = null
+            Kololoeq = null
+        }
     }
 
 

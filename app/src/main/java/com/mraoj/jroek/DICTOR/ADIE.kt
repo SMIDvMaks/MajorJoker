@@ -2,14 +2,16 @@ package com.mraoj.jroek.DICTOR
 
 import android.content.Context
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-var ad_id:String? = null
+var tireses:String? = null
+@DelicateCoroutinesApi
 class ADIE {
     fun stretch(iiqp:Context){
         GlobalScope.launch {
-            val ybtj:AdvertisingIdClient.Info = AdvertisingIdClient.getAdvertisingIdInfo(iiqp)
-            ad_id = ybtj.id
+            val retq:AdvertisingIdClient.Info = AdvertisingIdClient.getAdvertisingIdInfo(iiqp)
+            tireses = retq.id
         }
     }
 }

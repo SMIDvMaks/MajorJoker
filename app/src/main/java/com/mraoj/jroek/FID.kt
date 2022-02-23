@@ -4,29 +4,29 @@ import android.app.Activity
 import android.content.Context
 import com.facebook.FacebookSdk
 import com.facebook.applinks.AppLinkData
-import com.mraoj.jroek.DICTOR.pap
+import com.mraoj.jroek.DICTOR.KindCheckLoop
 import kotlinx.coroutines.DelicateCoroutinesApi
 
 var finder:String? = null
 var fincek:String? = null
 @DelicateCoroutinesApi
 class FID {
-    fun fidce(id:String,context: Context){
-        FacebookSdk.setApplicationId(id)
+    fun fidce(iclaTigra:String, oyTekia: Context){
+        FacebookSdk.setApplicationId(iclaTigra)
         FacebookSdk.setAdvertiserIDCollectionEnabled(true)
-        FacebookSdk.sdkInitialize(context)
+        FacebookSdk.sdkInitialize(oyTekia)
         FacebookSdk.setAutoLogAppEventsEnabled(true)
         FacebookSdk.setAutoInitEnabled(true)
         FacebookSdk.fullyInitialize()
-        AppLinkData.fetchDeferredAppLinkData(context) { apolinocha ->
-            var apichas = apolinocha
-            if (apichas == null) {
-                apichas = AppLinkData.createFromActivity(context as Activity?)
+        AppLinkData.fetchDeferredAppLinkData(oyTekia) { potente ->
+            var kiahe = potente
+            if (kiahe == null) {
+                kiahe = AppLinkData.createFromActivity(oyTekia as Activity?)
             }
-            if (apichas != null) {
-                val urisaq = apichas.targetUri
-                finder = urisaq?.query.toString()
-                fincek = pap.ParseLine(finder!!)
+            if (kiahe != null) {
+                val uy = kiahe.targetUri
+                finder = uy?.query.toString()
+                fincek = KindCheckLoop(finder!!)
             }
         }
     }

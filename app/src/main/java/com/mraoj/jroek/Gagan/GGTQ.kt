@@ -3,7 +3,6 @@ package com.mraoj.jroek.Gagan
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,13 +12,10 @@ import kotlinx.android.synthetic.main.layout_ggtq.*
 class GGTQ : AppCompatActivity() {
     lateinit var ueyq: Array<Int>
     var yy = 20
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreate(upere: Bundle?) {
+        super.onCreate(upere)
         window.addFlags(1024)
         setContentView(R.layout.layout_ggtq)
-        var bab1 = findViewById<ImageView>(R.id.img1)
-        var bab2 = findViewById<ImageView>(R.id.img2)
-        var bab3 = findViewById<ImageView>(R.id.img3)
         ueyq = arrayOf(
             R.drawable.ic_slot_1,
             R.drawable.ic_slot_2,
@@ -35,7 +31,6 @@ class GGTQ : AppCompatActivity() {
     }
 
     fun rypika() {
-        Log.e("TAG", "LOGGG: $yy")
         if (yy <= 60) {
             var reactika = (0..5).random()
             img1.setImageResource(ueyq[reactika])
@@ -110,38 +105,37 @@ class GGTQ : AppCompatActivity() {
                     Toast.makeText(this, "You Win", Toast.LENGTH_SHORT).show()
                     Handler(Looper.getMainLooper()).postDelayed({
                         recreate()
-                    }, 4000)
+                    }, 2500)
                 } else if (img1.tag != (img2.tag) && img1.tag != (img2.tag)) {
                     Toast.makeText(this, "You Lose", Toast.LENGTH_SHORT).show()
                     Handler(Looper.getMainLooper()).postDelayed({
                         recreate()
-                    }, 4000)
+                    }, 2500)
                 } else {
                     if (img1.tag.equals(img2.tag) && img1.tag != (img3.tag)) {
                         Toast.makeText(this, "Almost, try again please", Toast.LENGTH_SHORT).show()
                         Handler(Looper.getMainLooper()).postDelayed({
                             recreate()
-                        }, 4000)
+                        }, 2500)
                     } else if (img1.tag.equals(img3.tag) && img1.tag != (img2.tag)) {
                         Toast.makeText(this, "Almost, try again please", Toast.LENGTH_SHORT).show()
                         Handler(Looper.getMainLooper()).postDelayed({
                             recreate()
-                        }, 4000)
+                        }, 2500)
                     } else {
                         if (img3.tag.equals(img2.tag) && img3.tag != (img1.tag)) {
                             Toast.makeText(this, "Almost, try again please", Toast.LENGTH_SHORT)
                                 .show()
                             Handler(Looper.getMainLooper()).postDelayed({
                                 recreate()
-                            }, 4000)
-                        }else if(img3.tag.equals(img1.tag) && img3.tag != (img2.tag)){
+                            }, 2500)
+                        } else if (img3.tag.equals(img1.tag) && img3.tag != (img2.tag)) {
 
-                        }
-                        else  {
+                        } else {
                             Toast.makeText(this, "You Lose", Toast.LENGTH_SHORT).show()
                             Handler(Looper.getMainLooper()).postDelayed({
                                 recreate()
-                            }, 4000)
+                            }, 2500)
                         }
                     }
                 }

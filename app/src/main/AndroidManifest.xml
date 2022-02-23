@@ -43,7 +43,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6749474078432955~3507678543" />
+            android:value="ca-app-pub-6749474078432975~3507678543" />
 
         <activity
             android:name=".MJ8"
